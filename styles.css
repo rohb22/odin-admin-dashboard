@@ -10,7 +10,7 @@ body{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     display: grid;
-    height: 100vh;
+    height: 100%;
     grid-template-columns: .8fr 3fr;
     grid-template-rows: 1fr 3fr;
 }
@@ -159,37 +159,81 @@ input:focus {
 .projects {
     display: grid;
     grid-template-rows: 25px;
-    grid-template-columns: auto auto;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
 .cards {
+    color: #222831;
     background-color: white;
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    grid-template-rows: 1fr .2fr;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    gap: 5px;
+    box-sizing: border-box;
+}
+
+.colored {
+    grid-row: 1 / 3;
+    background-color: #00ADB5;
+
+}
+
+.cardtitle {
+    font-weight: bold;
+    font-size:1.1em
+}
+
+.cardtext {
+    font-weight: light;
+    font-size: 0.9em;
+}
+
+.contents {
+    align-self: center;
+    padding: 5px;
 }
 
 .board {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-
+    color:#222831;
 }
 
 .announcement {
-    background-color: rgb(144, 212, 33);
     display: grid;
-
     grid-template-rows: .5fr repeat(3,1fr);
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .announcements {
     background-color: white;
     border-bottom: 1px solid black;
-} 
+    color: #222831;
+}
+
+.announcement-title {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.announcement-text {
+    font-size: 0.8em;
+}
 
 .trends {
     display: grid;
-    background-color: rgb(66, 121, 194);
-    grid-template-rows: .5fr repeat(3, 1fr);
+    grid-template-rows: .5fr repeat(4, 1fr);
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;;
 }
 
 .users {
@@ -197,8 +241,37 @@ input:focus {
     padding: 5px;
     display: grid;
     grid-template-columns: .3fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
-.users > div {
-    background-color: black;
+.users > img {
+    object-fit: cover;
+    width: 90%;
+    max-height: 100%;
+    border-radius: 100%;
+    background-color: #222831;
+
+}
+
+.actions > img {
+    width: 7%;
+    cursor: pointer;
+    
+}
+
+.actions {
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    gap: 12px;
+}
+
+.user-add {
+    font-weight: bold;
+}
+
+.trend-name {
+    font-weight: light;
+    font-size: 0.9em;
 }
